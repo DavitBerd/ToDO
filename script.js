@@ -2,11 +2,11 @@ const date = new Date()
 const top1 = document.getElementById("top1")
 const top2 = document.getElementById("top2")
 const minutes = date.getMinutes().toString().padStart(2, '0')
-const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']
+const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const input = document.getElementById('input')
 const box = document.getElementById('box')
 
-let notes = JSON.parse(localStorage.getItem('notes'))
+let notes = JSON.parse(localStorage.getItem('notes')) || []
 
 const createCard = (text, timestamp, isFromStorage = false) => {
     const container = document.createElement('div')
@@ -55,5 +55,5 @@ document.getElementById('btn').addEventListener('click', (e) => {
 
 notes.forEach(note => createCard(note.text, note.timestamp, true))
 
-top1.textContent = `${weekdays[date.getDay()]}  ${date.getDate()}`
+top1.textContent = `${weekdays[date.getDay()]} ${date.getDate()}`
 top2.textContent = `${date.getHours()}:${minutes}`
