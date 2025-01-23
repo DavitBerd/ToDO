@@ -6,7 +6,7 @@ const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const input = document.getElementById('input')
 const box = document.getElementById('box')
 
-let notes = JSON.parse(localStorage.getItem('notes')) || []
+let notes = JSON.parse(localStorage.getItem('notes'))
 
 const createCard = (text, timestamp, isFromStorage = false) => {
     const container = document.createElement('div')
